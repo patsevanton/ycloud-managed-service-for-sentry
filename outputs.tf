@@ -1,18 +1,3 @@
-output "cluster_id" {
-  description = "The ID of the ClickHouse cluster."
-  value       = module.clickhouse.cluster_id
-}
-
-output "cluster_name" {
-  description = "The name of the ClickHouse cluster."
-  value       = module.clickhouse.cluster_name
-}
-
-output "cluster_host_zones_list" {
-  description = "The list of zones where the ClickHouse cluster hosts are located."
-  value       = module.clickhouse.cluster_host_zones_list
-}
-
 output "cluster_fqdns_list" {
   description = "The list of fully qualified domain names (FQDN) for the ClickHouse cluster nodes."
   value       = module.clickhouse.cluster_fqdns_list
