@@ -40,14 +40,14 @@ module "clickhouse" {
 
   users = [
     {
-      name     = "user1"
+      name     = "sentry"
       password = "password1"
     }
   ]
 
   databases = [
     {
-      name = "db_name"
+      name = "sentry"
     }
   ]
 
@@ -61,13 +61,13 @@ module "clickhouse" {
   ]
 
   # Optional variables
-  name                          = "clickhouse-cluster"
+  name                          = "clickhouse-sentry"
   clickhouse_disk_size          = 10
   clickhouse_disk_type_id       = "network-ssd"
   clickhouse_resource_preset_id = "s3-c2-m8"
   environment                   = "PRODUCTION"
   clickhouse_version            = "24.3"
-  description                   = "ClickHouse cluster description"
+  description                   = "ClickHouse sentry description"
   folder_id                     = data.yandex_client_config.client.folder_id
 
   depends_on = [module.iam_accounts, module.network]
