@@ -18,16 +18,9 @@ module "network" {
   source = "git::https://github.com/terraform-yacloud-modules/terraform-yandex-vpc.git?ref=v1.0.0"
 
   folder_id = data.yandex_client_config.client.folder_id
-
-  blank_name = "clickhouse-sentry"
-  labels = {
-    repo = "terraform-yacloud-modules/terraform-yandex-vpc"
-  }
-
+  blank_name = "sentry-vpc"
   azs = ["ru-central1-a"]
-
   private_subnets = [["10.3.0.0/24"]]
-
   create_vpc         = true
   create_nat_gateway = true
 }
